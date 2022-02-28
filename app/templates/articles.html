@@ -1,0 +1,58 @@
+{% extends 'base.html'%} {% import 'macros.html' as macro%} {% block styles%} {{
+super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap"
+  rel="stylesheet"
+/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap"
+  rel="stylesheet"
+/>
+{% endblock %}
+
+<!-- Content block -->
+{% block content %}
+<div class="container">
+  <div class="row" style="margin-bottom: 10px;" >
+    <div class="">
+      <h1 style="text-align: center; color: rgb(155, 93, 93)">
+        {{id}} News article
+      </h1>
+      <hr />
+
+      {% for article in read_article %}
+
+      <div
+        class="col-md-4"style="background-color: antiquewhite; height: 500px ;">
+        <h3 style="color: blue">
+          <li style="list-style: none">{{article.title}}</li>
+        </h3>
+        <li style="font-size: 18px; height: 200px; list-style: none">
+          <img
+            style="height: 200px; width: 300px"
+            src="{{article.urlToImage}}"
+            alt="this articles image is unavailabe"/>
+        </li>
+
+        <li style="font-size: 18px; list-style: none">
+          <strong>ABOUT THIS ARTICLE:</strong> {{article.description}}
+        </li>
+
+        <li style="font-size: 18px; list-style: none">
+          <strong>PUBLISHED ON:</strong> {{article.publishedAt}}
+        </li>
+
+        <a href="{{article.url}}"class="btn btn-primary"style="font: size 18px">read more in source</a>
+      </div>
+
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}
