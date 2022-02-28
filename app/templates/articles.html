@@ -18,7 +18,7 @@ super() }}
 
 <!-- Content block -->
 {% block content %}
-<div class="container">
+<div class="container" style="background-color: antiquewhite">
   <div class="row" style="margin-bottom: 10px;" >
     <div class="">
       <h1 style="text-align: center; color: rgb(155, 93, 93)">
@@ -54,5 +54,9 @@ super() }}
       {% endfor %}
     </div>
   </div>
+  {% block footer %}
+    {% include 'footer.html' %}
+  {% endblock %}
+
 </div>
 {% endblock %}

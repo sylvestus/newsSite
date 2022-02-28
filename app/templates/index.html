@@ -6,18 +6,18 @@
 {% block content %}
 
  
-<div class="container">
+<div class="container" style="background-color: antiquewhite">
 
  <div class="row d-flex flex-row">
-    <h1 style = "text-align:center; color:red; font-weight:600;">{{title}}</h1>
+    <h1 style = "text-align:center; color:rgb(155, 93, 93); font-weight:700;">{{title}}</h1>
     <hr>
-    <p style = "font-size:24px">{{heading}}</p>
+    <p style = "font-size:24px">{{ heading}}</p>
     <hr>
     
     <!-- Sports section -->
     
     <ul>
-        <h2 style = "text-align:center; color:red; font-weight:600;">Sports News Sources</h2>
+        <h2 style = "text-align:center; color:rgb(155, 93, 93); ">Sports News Sources</h2>
         <hr>
         {{macro.display_sources_list(sports)}}
     </ul>
@@ -28,7 +28,7 @@
     <!-- Business section -->
     
     <ul>
-        <h2 style = "text-align:center; color:red; font-weight:600;">Business News Sources</h2>
+        <h2 style = "text-align:center; color:rgb(155, 93, 93); ">Business News Sources</h2>
         <hr>
         {{macro.display_sources_list(business)}}
     </ul>
@@ -38,7 +38,7 @@
     <!-- Entertainment section -->
     
     <ul>
-        <h2 style = "text-align:center; color:red; ">Entertainment News Sources</h2>
+        <h2 style = "text-align:center; color:rgb(155, 93, 93); ">Entertainment News Sources</h2>
         <hr>
         {{macro.display_sources_list(entertainment)}}
     </ul>
@@ -62,8 +62,12 @@
     </ul></div>
 
 </div>
+{% block footer %}
+    {% include 'footer.html' %}
+  {% endblock %}
 
 {% endblock %}
+
 
 
 
