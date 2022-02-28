@@ -11,6 +11,15 @@ class Sources:
         self.country = country
         self.author = author
 
-
+class Articles:
+    """
+    class that defines news article objects
+    """
+    def __init__(self, title, description, url, urlToImage, publishedAt):
+        self.title = title
+        self.description =description
+        self.url = url
+        self.urlToImage = urlToImage
+        self.publishedAt = publishedAt
     
 
