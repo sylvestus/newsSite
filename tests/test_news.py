@@ -9,7 +9,7 @@ class ArticlesTest(unittest.TestCase):
         """
         Set up method that is run everytime before every test.
         """
-        self.new_article = Articles('sm news.com', '', 'www.cheborgeisambu.com', 'www.cheborgeiimage.com','14/3/1998')
+        self.new_article = Articles('sm news', 'the best news site in the planet', 'tuko.com', 'opera_news.com','20/14/1993')
 
     def test_instance(self):
         self.assertTrue(isinstance(self.new_article, Articles))
