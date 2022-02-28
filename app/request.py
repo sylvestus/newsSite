@@ -57,4 +57,45 @@ def process_results(sources_result_list):
 
     return sources_results
 
+def get_articles(id):
+    """
+    Function to get the articles json response to our url request
+    """
+
+
+    get_article_url = articles_base_url.format(id,api_key)
+    with urllib.request.urlopen(get_article_url) as url:
+        articles_data = url.read()
+        articles_response = json.loads(articles_data)
+        articles_results = None
+        
+        if articles_response['articles']:
+            source_article_list = articles_response['articles']
+            articles_results = process_articles_results(source_article_list)
+    return articles_results
+
+
+
+
+def process_articles_results(articles_results_list):
+    """
+    Function that process the list of article from the request.
+    """
+    articles_results = []
+    for individual_article in articles_results_list:
+        title = individual_article.get('title')
+        description = individual_article.get('description')
+        url = individual_article.get('url')
+        urlToImage = individual_article.get('urlToImage')
+        publishedAt = individual_article.get('publishedAt')
+
+        # convert date from json to string and backto my specific  format
+        publishing_date = datetime.strptime(publishedAt, '%Y-%m-%dT%H:%M:%SZ')
+        publishedAt = publishing_date.strftime('%d.%m.%Y')
+
+
+        article_object = Articles(title, description, url, urlToImage, publishedAt)
+        articles_results.append(article_object)
+
+    return articles_results
 
