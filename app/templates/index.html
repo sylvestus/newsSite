@@ -1,0 +1,69 @@
+{% extends 'base.html'%} {% import 'macros.html' as macro%}
+
+<!-- Styles block -->
+
+ 
+{% block content %}
+
+ 
+<div class="container">
+
+ <div class="row d-flex flex-row">
+    <h1 style = "text-align:center; color:red; font-weight:600;">{{title}}</h1>
+    <hr>
+    <p style = "font-size:24px">{{heading}}</p>
+    <hr>
+    
+    <!-- Sports section -->
+    
+    <ul>
+        <h2 style = "text-align:center; color:red; font-weight:600;">Sports News Sources</h2>
+        <hr>
+        {{macro.display_sources_list(sports)}}
+    </ul>
+    </div>
+
+
+    <div class="row d-flex justify-content-between">
+    <!-- Business section -->
+    
+    <ul>
+        <h2 style = "text-align:center; color:red; font-weight:600;">Business News Sources</h2>
+        <hr>
+        {{macro.display_sources_list(business)}}
+    </ul>
+    </div>
+
+    <div class="d-flex justify-content-between">
+    <!-- Entertainment section -->
+    
+    <ul>
+        <h2 style = "text-align:center; color:red; ">Entertainment News Sources</h2>
+        <hr>
+        {{macro.display_sources_list(entertainment)}}
+    </ul>
+    </div>
+
+    <div class="row d-flex justify-content-between">
+    <!-- technology section -->
+    
+    <ul>
+        <h2 style = "text-align:center; color:red; font-weight:600;">sciences News Sources</h2>
+        <hr>
+        {{macro.display_sources_list(science)}}
+    </ul></div>
+      <div class="row d-flex justify-content-between">
+    <!-- General section -->
+    <ul>
+        <h2 style="text-align:center; color:red; font-weight:600;font-family: 'Cinzel Decorative', cursive;">General News
+            Sources</h2>
+        <hr>
+        {{macro.display_sources_list(general)}}
+    </ul></div>
+
+</div>
+
+{% endblock %}
+
+
+
