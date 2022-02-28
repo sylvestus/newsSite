@@ -19,3 +19,14 @@ def index():
     science = get_sources('science')
 
     return render_template('index.html', title=title, heading=heading, general = general, sports = sports, business = business, entertainment = entertainment, science = science)
+
+@main.route('/newsSource/<id>')
+def articles(id):
+    """
+    View page function that returns articles page and and its content.
+    """
+    articles_title = "Article categories"
+    read_article = get_articles(id)
+   
+
+    return render_template("articles.html", id = id, read_article=read_article, articles_title = articles_title )
